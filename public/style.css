@@ -48,21 +48,24 @@ a {
 
 .container {
   max-width: 1280px;
-  margin: auto 100px;
+  margin: 0 auto;
 }
 
-.button-primary {
-  background-color: #ffffff;
-  color: #c01111;
+.button-basic, .button-secondary, .button-primary {
   font-size: 1.8rem;
   width: 100%;
   padding: 30px 0px;
   border-radius: 12px;
   font-weight: 700;
 }
-.button-primary i {
+.button-basic i, .button-secondary i, .button-primary i {
   font-size: 2rem;
   margin-left: 12px;
+}
+
+.button-primary {
+  background-color: #ffffff;
+  color: #c01111;
 }
 
 .button-primary {
@@ -76,15 +79,6 @@ a {
 .button-secondary {
   background-color: #2b3441;
   color: #ffffff;
-  font-size: 1.8rem;
-  width: 100%;
-  padding: 30px 0px;
-  border-radius: 12px;
-  font-weight: 700;
-}
-.button-secondary i {
-  font-size: 2rem;
-  margin-left: 12px;
 }
 
 .button-secondary {
@@ -120,7 +114,7 @@ a {
 
 @media screen and (max-width: 1024px) {
   .container {
-    margin: auto 20px;
+    margin: 0 20px;
   }
 }
 
@@ -523,10 +517,14 @@ a {
 }
 .footer .footer-card {
   max-width: 1280px;
-  margin: 0 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+.footer .footer-card .grid-column-2 {
+  grid-column-start: 3;
+  grid-column-end: 5;
 }
 .footer .footer-card img {
   width: 150px;
@@ -571,18 +569,12 @@ a {
 
 @media screen and (max-width: 1024px) {
   .footer-card {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
     flex-direction: column;
     text-align: center;
   }
-}
-.footer-card .footer-contact {
-  padding-bottom: 40px;
-}
-.footer-card .footer--news {
-  padding-bottom: 40px;
-}
-.footer-card .footer-office {
-  padding-bottom: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */
